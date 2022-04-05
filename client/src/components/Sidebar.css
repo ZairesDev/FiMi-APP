@@ -1,23 +1,65 @@
+* {
+    --carmine: #D52A4B;
+    --dark-purp: #16001E;
+    --max-blue-purp: #A09BE7;
+    --mellow-apricot: #FFB86F;
+    --screamin-green: #5CF64A;
+    --alablaster: #E0DFD5;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    background: var(--dark-purp);
+    border-bottom: 2px solid var(--carmine);
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    right: 3.5rem;
+    font-size: 2rem;
+    background: none;
+}
 
 .icons {
+    color: #fff;
+    font-size: 18px;
+    width: 3rem;
+    margin-right: 2rem;
+}
+
+.menuBtn {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: black;
+    color: #fff;
     margin-left: 10px;
-    height: 80px;
+    height: 4rem;
 }
 
 .nav-bar {
     display: flex;
     justify-content: center;
     position: fixed;
-    background: rgb(147, 194, 20);
-    width: 250px;
+    background: var(--dark-purp);
+    width: 13.5rem;
     height: 100%;
     top: 0;
     left: -100%;
     transition: 400ms ease-in-out;
+    border-right: 3px solid var(--carmine);
 }
 
 .nav-bar.active {
@@ -26,21 +68,48 @@
 }
 
 .nav-text {
+    text-align: center;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 22px 0;
     list-style: none;
     height: 60px;
+    text-decoration: none;
+    border-bottom: 2px double #fff;
 }
 
 .nav-text a {
+    text-align: center;
     display: flex;
     align-items: center;
+    position: relative;
+    right: 40px;
     text-decoration: none;
-    color: black;
+    color: #fff;
     font-size: 18px;
     width: 95%;
     height: 100%;
-    border-radius: 10px;
+    padding: 22px 3rem;
+    overflow: hidden;
 }
+
+.nav-text a:hover {
+    opacity: 1;
+    background: var(--carmine);
+    transition: 400ms ease-out;
+}
+
+.nav-header {
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    justify-content: end;
+    width: 85vw;
+}
+
+.nav-header li {
+    margin-left: 5rem;
+}
+
+

@@ -1,6 +1,7 @@
 import React from 'react'
 import Icon from '@mdi/react'
-import { mdiHome, mdiLoginVariant, mdiLogoutVariant, mdiTable, mdiClipboardSearchOutline, mdiAccountPlus } from '@mdi/js';
+import { mdiHome, mdiLoginVariant, mdiLogoutVariant, mdiClipboardSearchOutline, mdiAccountPlus, mdiTableLarge, mdiClipboardEditOutline } from '@mdi/js';
+
 
 export const SidebarObjects = [
     {
@@ -26,11 +27,16 @@ export const SidebarObjects = [
     {
         title: 'Dashboard',
         path: '/dashboard',
-        icon: <Icon path={mdiTable} />
+        icon: <Icon path={mdiTableLarge} />
     },
     {
         title: 'Search',
         path: '/search',
         icon: <Icon path={mdiClipboardSearchOutline} />
+    },
+    {
+        title: 'Employee Form',
+        path: '/empform',
+        icon: <Icon path={mdiClipboardEditOutline}/>
     }
 ];
