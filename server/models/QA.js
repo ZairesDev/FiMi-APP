@@ -24,21 +24,28 @@ const QASchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
   },
+  password: {
+    type: String,
+    required: true,
+    minlength: 8,
+  },
   QASup: {
       type: Schema.Types.ObjectId,
       ref: "QASup"
   },
   employees: [
       {
-          type: Schema.Types.ObjectId,
-          ref: "Employee"
+        type: Schema.Types.ObjectId,
+        ref: "Employee"
       }
   ],
 },
+
 {
   toJSON: {
     virtuals: true
-  }
+  },
+  id: false
 },
 );
 // set up pre-save middleware to create password

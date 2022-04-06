@@ -1,34 +1,40 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const QASupSchema = new Schema({
-  first_name: {
-    type: String,
-    required: true,
-  },
-  last_name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-  },
-  qaStaff: [
+const QASupSchema = new Schema(
+  {
+    first_name: {
+      type: String,
+      required: true,
+    },
+    last_name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 8,
+    },
+    qaStaff: [
       {
-          type: Schema.Types.ObjectId,
-          ref: "QA"
+        type: Schema.Types.ObjectId,
+        ref: "QA",
       },
-  ],
-},
-{
-  toJSON: {
-    virtuals: true
+    ],
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+    id: false
   }
-}
-
 );
 
 // set up pre-save middleware to create password

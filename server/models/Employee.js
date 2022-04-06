@@ -23,7 +23,7 @@ const EmployeeSchema = new Schema (
         required: true,
     },
     language: {
-        type: Stromh,
+        type: String,
         required: true,
     },
     group: {
@@ -37,6 +37,8 @@ const EmployeeSchema = new Schema (
     qa: {
         type: Schema.Types.ObjectId,
         ref: "QA"
+
+        
     }
 
 });
