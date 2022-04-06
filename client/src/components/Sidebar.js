@@ -4,13 +4,25 @@ import './Sidebar.css'
 import { SidebarObjects } from './SidebarObjects';
 import { mdiMenu, mdiClose } from '@mdi/js'
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, useMediaQuery, useTheme, Box, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Typography, useMediaQuery, useTheme, Menu, MenuItem } from '@mui/material';
 
 
 
 const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+
+    const [anchorEl, setAnchorEl] = useState(false);
+    const openDropdown = Boolean(anchorEl)
+
+    const manageClick = e => {
+        setAnchorEl(e.currentTarget)
+        console.log(e.currentTarget)
+    }
+
+    const manageClose = () => {
+        setAnchorEl(null)
+    }
 
     const mobile = useTheme();
     const isMobile = useMediaQuery(mobile.breakpoints.down('md'))
@@ -34,12 +46,12 @@ const Sidebar = () => {
                                     </li>
                                     {SidebarObjects.map((data, key) => {
                                         return (
+
                                             <li key={key} className='nav-text'>
                                                 <Link to={data.path}>
                                                     <div className='icons'>{data.icon}</div>
                                                     <div>{data.title}</div>
                                                 </Link>
-                                                <span></span>
                                             </li>
                                         );
                                     })}
@@ -58,8 +70,18 @@ const Sidebar = () => {
                                     </Typography>
                                 </li>
                                 <li>
-                                    <Typography aria-controls='menu' aria-haspopup='true' aria-expanded='false' onClick={() => {}}>
+                                    <Typography aria-controls='menu' aria-haspopup='true' aria-expanded={openDropdown ? 'true' : undefined} onClick={manageClick}>
                                         Management
+                                    </Typography>
+                                </li>
+                                <li>
+                                    <Typography>
+                                        Login
+                                    </Typography>
+                                </li>
+                                <li>
+                                    <Typography>
+                                        Sign up
                                     </Typography>
                                 </li>
                                 <li>
@@ -67,12 +89,20 @@ const Sidebar = () => {
                                         Logout
                                     </Typography>
                                 </li>
+                                <Menu id='menu' anchorEl={anchorEl} open={openDropdown} onClose={manageClose}>
+                                    <MenuItem onClick={manageClose}>
+                                        <Link className='no-text-decor' to='/empform' path='/empform'>Add Employee</Link>
+                                    </MenuItem>
+                                    <MenuItem onClick={manageClose}>
+                                        <Link className='no-text-decor' to='/dashboard' path='/dashboard'>Dashboard</Link>
+                                    </MenuItem>
+                                    <MenuItem onClick={manageClose}>
+                                        <Link className='no-text-decor' to='/search' path='/search'>Search</Link>
+                                    </MenuItem>
+                                </Menu>
                             </ul>
                         </Toolbar>
-                        <Menu>
-                            <MenuItem>Hi</MenuItem>
-                            <MenuItem>Hi</MenuItem>
-                        </Menu>
+
                     </>)}
             </AppBar>
         </>

@@ -7,8 +7,9 @@
     --alablaster: #E0DFD5;
 }
 
-li {
+li, .no-text-decor {
     list-style: none;
+    text-decoration: none;
 }
 
 .header {
@@ -60,6 +61,7 @@ li {
     left: -100%;
     transition: 400ms ease-in-out;
     border-right: 3px solid var(--carmine);
+    overflow: hidden;
 }
 
 .nav-bar.active {
@@ -91,7 +93,6 @@ li {
     width: 95%;
     height: 100%;
     padding: 22px 3rem;
-    overflow: hidden;
 }
 
 .nav-text a:hover {
@@ -110,6 +111,18 @@ li {
 
 .nav-header li {
     margin-left: 5rem;
+}
+
+.manage-menu {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    left: 10rem;
+    width: 100vw;
+}
+
+.no-text-decor {
+    color: black;
 }
 
 
