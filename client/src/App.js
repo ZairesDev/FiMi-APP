@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from '../src/components/Sidebar'
 import Home from './pages/Home'
@@ -12,14 +11,14 @@ const App = () => {
   return (
     <div>
       <Router>
-      <Sidebar/>
-      <Routes>
+        <Sidebar />
+        <Routes>
           <Route path='/' exact component={Home} />
           <Route path='/' component={Logout} />
           <Route path='/Login' component={Login} />
           <Route path='/Search' component={Search} />
-          <Route path='/Dashboard' component={Dashboard}/>
-          <Route path='/Signup' component={Signup}/>
+          <Route path='/Dashboard' component={Dashboard} />
+          <Route path='/Signup' component={Signup} />
         </Routes>
       </Router>
     </div>
