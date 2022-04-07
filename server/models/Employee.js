@@ -30,10 +30,10 @@ const EmployeeSchema = new Schema (
         type: String,
         required: true,
     },
-    supervisor: {
+    supervisor: [{
         type: Schema.Types.ObjectId,
         ref: "Supervisor",
-    },
+    }],
     qa: {
         type: Schema.Types.ObjectId,
         ref: "QA"
