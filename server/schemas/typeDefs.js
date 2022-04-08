@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-//* variable name of 'supervisor' may change depending on model information
+//* variable name, for QASup, may change depending on model information
 
 const typeDefs = gql`
   type Auth {

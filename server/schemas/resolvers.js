@@ -13,27 +13,27 @@ const resolvers = {
   },
 
   Mutation: {
-    addSupervisor: async (parent, args) => {
-      const qaSupervisor = await QaSupervisor.create(args);
-      const token = signToken(supervisor);
+    addQaSup: async (parent, args) => {
+      const qaSup = await QASup.create(args);
+      const token = signToken(qaSup);
 
-      return { token, qaSupervisor };
+      return { token, qaSup };
     },
     login: async (parent, { email, password }) => {
-      const qaSupervisor = await QaSupervisor.findOne({ email });
+      const qaSup = await QASup.findOne({ email });
 
-      if (!qaSupervisor) {
+      if (!qaSup) {
         throw new AuthenticationError('Invalid credentials');
       }
 
-      const correctPw = await qaSupervisor.isCorrectPassword(password);
+      const correctPw = await qaSup.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Invalid credentials');
       }
 
-      const token = signToken(qaSupervisor);
-      return { token, qaSupervisor };
+      const token = signToken(qaSup);
+      return { token, qaSup };
     },
   },
 };
