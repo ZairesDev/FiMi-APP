@@ -6,8 +6,6 @@ import { mdiMenu, mdiClose } from '@mdi/js'
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, useMediaQuery, useTheme, Menu, MenuItem } from '@mui/material';
 
-
-
 const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
