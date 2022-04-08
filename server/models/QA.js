@@ -18,17 +18,7 @@ const QASchema = new Schema({
       type: String,
       required: true,
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 8,
-  },
+
   QASup: {
       type: Schema.Types.ObjectId,
       ref: "QASup"
