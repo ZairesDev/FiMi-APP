@@ -27,6 +27,7 @@ const typeDefs = gql`
     last_name: String
     language: String
     site: String
+    QASup: [QASup]
     
   }
 
@@ -73,7 +74,7 @@ const typeDefs = gql`
     addQASupUser(first_name: String!, last_name: String!, email: String!, password: String!): Auth
 
     addQA(first_name: String!, last_name: String!, 
-    language: String!, site: String!): QA
+    language: String!, site: String!, QASup: ID!): QA
   }
 `;
 
