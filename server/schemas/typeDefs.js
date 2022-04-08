@@ -6,7 +6,11 @@ const typeDefs = gql`
     _id: ID
     first_name: String
     last_name: String
+    
   }
+
+
+
   type Employee {
     _id: ID
     first_name: String
@@ -17,6 +21,8 @@ const typeDefs = gql`
     language: String
     group: String
     supervisor: [Supervisor]
+    
+    
    
   
   }

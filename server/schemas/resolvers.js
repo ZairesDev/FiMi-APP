@@ -7,7 +7,8 @@ const resolvers = {
     },
 
     employees: async () => {
-      return Employee.find();
+      return Employee.find().populate("supervisor")
+      
     },
   },
 
@@ -19,9 +20,12 @@ const resolvers = {
     },
 
     addEmployee: async (parent, args) => {
-      const newEmp = await Employee.create(args);
+      const newEmp = await Employee.create(args)
 
-      return newEmp;
+      const getNewEmp = await Employee.findById(newEmp._id).populate("supervisor")
+       
+
+      return getNewEmp;
     },
   },
 };
