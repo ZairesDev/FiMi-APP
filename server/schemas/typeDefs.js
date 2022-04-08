@@ -9,17 +9,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    me: Supervisor
+    me: QASup
     qaSupervisor: [QaSupervisor]
     qaSupervisor(username: String!): QaSupervisor
-    comments(username: String): [Comment]
-    comment(_id: ID!): Comment
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addSupervisor(username: String!, email: String!, password: String!): Auth
-    addComment(commentText: String!): Comment
   }
 `;
 

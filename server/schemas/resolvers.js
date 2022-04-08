@@ -1,6 +1,15 @@
+const { QASup } = require('../models');
 const { signToken } = require('../utils/auth');
 //* variable name of 'supervisor' may change depending on model information
 const resolvers = {
+  Query: {
+    me: async (parent, args) => {
+      const qaSupData = await QASup.findOne({}).select('-__v -password').populate('qaStaff');
+
+      return qaSupData;
+    },
+  },
+
   Mutation: {
     addSupervisor: async (parent, args) => {
       const qaSupervisor = await QaSupervisor.create(args);
