@@ -9,9 +9,9 @@ const typeDefs = gql`
   }
 
   type Query {
+    // this should just go above your QASup query type dif. 
+    // will NOT be it's own query. 
     me: QASup
-    qaSupervisor: [QaSupervisor]
-    qaSupervisor(username: String!): QaSupervisor
   }
 
   type Mutation {

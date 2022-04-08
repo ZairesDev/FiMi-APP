@@ -4,11 +4,15 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     me: async (parent, args) => {
-      if (context.qaSup) {
-        const qaSupData = await QASup.findOne({}).select('-__v -password').populate('qaStaff');
+      if (context.QASup) {
+        const qaSupData = await QASup.findOne({ _id: context.QASup })
+          .select('-__v -password')
+          .populate('qaStaff');
 
         return qaSupData;
       }
+
+      throw new AuthenticationError('You are not logged in. Please log in.');
     },
   },
 
