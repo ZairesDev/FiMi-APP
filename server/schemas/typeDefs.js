@@ -5,7 +5,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Auth {
     token: ID!
-    supervisor: Supervisor
+    qaSupervisor: QaSupervisor
   }
 
   type Query {

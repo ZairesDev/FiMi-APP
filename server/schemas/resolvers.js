@@ -4,9 +4,11 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     me: async (parent, args) => {
-      const qaSupData = await QASup.findOne({}).select('-__v -password').populate('qaStaff');
+      if (context.qaSup) {
+        const qaSupData = await QASup.findOne({}).select('-__v -password').populate('qaStaff');
 
-      return qaSupData;
+        return qaSupData;
+      }
     },
   },
 
