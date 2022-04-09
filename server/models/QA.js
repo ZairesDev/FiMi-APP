@@ -23,12 +23,7 @@ const QASchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "QASup"
   },
-  employees: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Employee"
-      }
-  ],
+ 
 },
 
 {

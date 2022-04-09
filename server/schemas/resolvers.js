@@ -2,11 +2,13 @@ const { Supervisor, Employee, QASup, QA } = require('../models')
 const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
+
+    //login query//for login screen
     me: async (parent, args, context) => {
       if (context.QASup) {
-        const QASupData = await QASup.findOne({ _id: context.QASup._id })
-          .select("-__v -password")
-          
+        const QASupData = await QASup.findOne({
+          _id: context.QASup._id,
+        }).select("-__v -password");
 
         return QASupData;
       }
@@ -16,19 +18,17 @@ const resolvers = {
 
     //get all qa sups
     QASups: async () => {
-      return QASup.find().select("-__v -password")
+      return QASup.find().select("-__v -password");
     },
 
     //get a qa sup by email
     QASup: async (parent, { email }) => {
-      return QASup.findOne({ email })
-        .select("-__v -password")
-        
+      return QASup.findOne({ email }).select("-__v -password");
     },
 
     //get all CSR employees
     employees: async () => {
-      return Employee.find().populate("supervisor").populate("qa")
+      return Employee.find().populate("supervisor").populate("qa");
     },
 
     // get all CSR supervisors
@@ -56,8 +56,9 @@ const resolvers = {
     addEmployee: async (parent, args) => {
       const newEmp = await Employee.create(args);
 
-      const getNewEmp = await Employee.findById(newEmp._id).populate(
-        "supervisor").populate("qa");
+      const getNewEmp = await Employee.findById(newEmp._id)
+        .populate("supervisor")
+        .populate("qa");
 
       return getNewEmp;
     },
@@ -69,6 +70,17 @@ const resolvers = {
 
       return { token, newQASupUser };
     },
+
+    // add new QA staff member
+    addQA: async (parent, args) => {
+      const QANew = await QA.create(args);
+
+      const getQANew = await QA.findById(QANew._id).populate("QASup");
+
+      return getQANew;
+    },
+
+    //login mutation
     login: async (parent, { email, password }) => {
       const user = await QASup.findOne({ email });
 
@@ -84,15 +96,6 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
-    },
-
-    // add new QA staff member
-    addQA: async (parent, args) => {
-      const QANew = await QA.create(args);
-
-      const getQANew = await QA.findById(QANew._id).populate("QASup");
-
-      return getQANew;
     },
   },
 };

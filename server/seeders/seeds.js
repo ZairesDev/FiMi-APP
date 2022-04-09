@@ -28,19 +28,13 @@ db.once("open", async () => {
     newEmp.supervisor = tempSup._id;
     await tempEmp.save();
 
-
+    //randomly adds a qa to an employee
     const tempQA = qa[Math.floor(Math.random() * qa.length)];
     newEmp.qa = tempQA._id;
     await tempEmp.save();
-
-
   }
 
-  for (newQA of qa) {
-    //randomly adds each qa to an employee
-    tempEmp.qa.push(newQA._id);
-    await tempEmp.save();
-  }
+
 
   //randomly add qasup to a qa
   for (newqaSup of qasups) {
