@@ -1,0 +1,12 @@
+.form-header {
+    font-size: 40px !important;
+    border-bottom: 2px solid black;
+}
+
+.form-spacing {
+    margin-bottom: 20px !important;
+}
+
+.submit {
+    padding: 5px !important;
+}
