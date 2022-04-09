@@ -30,6 +30,8 @@ const seedSup = [
   },
 ];
 
+
+
 const seedQA = [
   {
     first_name: "Paul",

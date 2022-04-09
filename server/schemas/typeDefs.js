@@ -13,7 +13,7 @@ const typeDefs = gql`
     first_name: String
     last_name: String
     email: String
-    qaStaff: [QA]
+  
   }
 
   type Auth {
@@ -22,7 +22,7 @@ const typeDefs = gql`
   }
 
   type QA {
-    _id: ID
+    _id: ID!
     first_name: String
     last_name: String
     language: String
@@ -41,6 +41,7 @@ const typeDefs = gql`
     language: String
     group: String
     supervisor: [Supervisor]
+    QA: [QA]
   }
 
   # Queries
@@ -48,7 +49,7 @@ const typeDefs = gql`
   type Query {
     me: QASup
     QASups: [QASup]
-    QASup: QASup
+    QASup(email: String!): QASup
     employees: [Employee]
     supervisors: [Supervisor]
     QA: [QA]
@@ -67,6 +68,7 @@ const typeDefs = gql`
       language: String!
       group: String!
       supervisor: ID!
+      QA: ID!
     ): Employee
 
     login(email: String!, password: String!): Auth

@@ -34,12 +34,12 @@ const EmployeeSchema = new Schema (
         type: Schema.Types.ObjectId,
         ref: "Supervisor",
     }],
-    qa: {
+    QA: [{
         type: Schema.Types.ObjectId,
         ref: "QA"
 
         
-    }
+    }]
 
 });
 

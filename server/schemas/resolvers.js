@@ -1,4 +1,4 @@
-const { Supervisor, Employee, QASup } = require('../models')
+const { Supervisor, Employee, QASup, QA } = require('../models')
 const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
@@ -6,7 +6,7 @@ const resolvers = {
       if (context.QASup) {
         const QASupData = await QASup.findOne({ _id: context.QASup._id })
           .select("-__v -password")
-          .populate("qaStaff");
+          
 
         return QASupData;
       }
@@ -16,19 +16,19 @@ const resolvers = {
 
     //get all qa sups
     QASups: async () => {
-      return QASup.find().select("-__v -password").populate("qaStaff");
+      return QASup.find().select("-__v -password")
     },
 
     //get a qa sup by email
     QASup: async (parent, { email }) => {
       return QASup.findOne({ email })
         .select("-__v -password")
-        .populate("qaStaff");
+        
     },
 
     //get all CSR employees
     employees: async () => {
-      return Employee.find().populate("supervisor");
+      return Employee.find().populate("supervisor").populate("QA")
     },
 
     // get all CSR supervisors
@@ -38,7 +38,7 @@ const resolvers = {
 
     // get all QA staff
     QA: async () => {
-      return QA.find();
+      return QA.find().populate("QASup");
     },
   },
 
