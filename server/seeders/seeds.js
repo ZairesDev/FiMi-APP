@@ -20,12 +20,20 @@ db.once("open", async () => {
   const qa = await QA.insertMany(qaData);
   const employees = await Employee.insertMany(employeeData);
   const tempEmp = employees[Math.floor(Math.random() * employees.length)];
-  const tempQA = qa[Math.floor(Math.random() * qa.length)];
 
-  for (newSup of supervisors) {
-    // randomly adds each sup to an employee
-    tempEmp.supervisors.push(newSup._id);
+
+  for (newEmp of employees) {
+    // randomly adds a sup to each employee
+    const tempSup = supervisors[Math.floor(Math.random() * supervisors.length)];
+    newEmp.supervisor = tempSup._id;
     await tempEmp.save();
+
+
+    const tempQA = qa[Math.floor(Math.random() * qa.length)];
+    newEmp.qa = tempQA._id;
+    await tempEmp.save();
+
+
   }
 
   for (newQA of qa) {

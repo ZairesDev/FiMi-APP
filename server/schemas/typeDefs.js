@@ -41,7 +41,7 @@ const typeDefs = gql`
     language: String
     group: String
     supervisor: [Supervisor]
-    QA: [QA]
+    qa: [QA]
   }
 
   # Queries
@@ -68,7 +68,7 @@ const typeDefs = gql`
       language: String!
       group: String!
       supervisor: ID!
-      QA: ID!
+      qa: ID!
     ): Employee
 
     login(email: String!, password: String!): Auth

@@ -28,7 +28,7 @@ const resolvers = {
 
     //get all CSR employees
     employees: async () => {
-      return Employee.find().populate("supervisor").populate("QA")
+      return Employee.find().populate("supervisor").populate("qa")
     },
 
     // get all CSR supervisors
@@ -57,8 +57,7 @@ const resolvers = {
       const newEmp = await Employee.create(args);
 
       const getNewEmp = await Employee.findById(newEmp._id).populate(
-        "supervisor"
-      );
+        "supervisor").populate("qa");
 
       return getNewEmp;
     },
@@ -91,7 +90,7 @@ const resolvers = {
     addQA: async (parent, args) => {
       const QANew = await QA.create(args);
 
-      const getQANew = await QA.findById(QANew._id).populate("supervisor");
+      const getQANew = await QA.findById(QANew._id).populate("QASup");
 
       return getQANew;
     },

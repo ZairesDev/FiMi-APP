@@ -34,7 +34,7 @@ const EmployeeSchema = new Schema (
         type: Schema.Types.ObjectId,
         ref: "Supervisor",
     },
-    QA: {
+    qa: {
         type: Schema.Types.ObjectId,
         ref: "QA"
 
