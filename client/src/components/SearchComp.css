@@ -1,3 +1,36 @@
 search {
     margin-bottom: 50%;
 }
+.test {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    padding: 20px;
+}
+
+.box {
+    border: 2px solid var(--dark-purp);
+    background: var(--max-blue-purp);
+    color: #fff;
+}
+
+.card-background {
+    text-align: center;
+    background: var(--max-blue-purp);
+    border: 2.5px solid var(--bdazzle-blue);
+    padding: 8px;
+}
+
+.card-header {
+    font-size: 25px !important;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.overseers-deco, .site-deco {
+    font-size: 20px !important;
+}
+
+.site-deco {
+    border-bottom: 4px solid var(--bdazzle-blue);
+}
