@@ -10,7 +10,7 @@ const LoginComp = () => {
                 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', flexWarp: 'wrap', flexDirection: 'column', p: '50px', width: '15vw' }}> 
                     <Typography className='form-spacing form-header'>
-                        Sign Up
+                        Login
                     </Typography>
                     <TextField className='form-spacing' id="standard-basic" label='Username' variant='standard' />
                     <TextField className='form-spacing' id="standard-basic" label="Password" variant="standard" />
