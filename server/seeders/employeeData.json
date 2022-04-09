@@ -6,9 +6,8 @@
     "site": "San Antonio",
     "role": "CSR",
     "language": "Spn",
-    "group": "A",
-    "supervisor": 1,
-    "qa": "Paul Holes"
+    "group": "A"
+
   },
   {
     "first_name": "Chammy",
@@ -17,9 +16,8 @@
     "site": "San Antonio",
     "role": "CSR",
     "language": "Eng",
-    "group": "A",
-    "supervisor": "Richard Cats",
-    "qa": "Paul Holes"
+    "group": "A"
+
   },
   {
     "first_name": "Perla",
@@ -28,9 +26,8 @@
     "site": "San Antonio",
     "role": "CSR",
     "language": "Eng",
-    "group": "A",
-    "supervisor": "Richard Cats",
-    "qa": "Paul Holes"
+    "group": "A"
+
   },
   {
     "first_name": "Carla",
@@ -39,9 +36,8 @@
     "site": "Tyler",
     "role": "CSR",
     "language": "Eng",
-    "group": "B",
-    "supervisor": "Selena Perez",
-    "qa": "Karen Kilgariff"
+    "group": "B"
+
   },
   {
     "first_name": "Steve",
@@ -50,9 +46,8 @@
     "site": "Tyler",
     "role": "CSR",
     "language": "Spn",
-    "group": "B",
-    "supervisor": "Selena Perez",
-    "qa": "Karen Kilgariff"
+    "group": "B"
+
   },
   {
     "first_name": "Tim",
@@ -61,9 +56,8 @@
     "site": "Tyler",
     "role": "CSR",
     "language": "Spn",
-    "group": "B",
-    "supervisor": "Selena Perez",
-    "qa": "Karen Kilgariff"
+    "group": "B"
+
   },
   {
     "first_name": "Catalina",
@@ -72,9 +66,8 @@
     "site": "McAllen",
     "role": "CSR",
     "language": "Eng",
-    "group": "B",
-    "supervisor": "Jojo Valencia",
-    "qa": "Georgia Hardstark"
+    "group": "B"
+
   },
   {
     "first_name": "Mike",
@@ -83,9 +76,8 @@
     "site": "McAllen",
     "role": "CSR",
     "language": "Eng",
-    "group": "B",
-    "supervisor": "Jojo Valencia",
-    "qa": "Georgia Hardstark"
+    "group": "B"
+
   },
   {
     "first_name": "Falcon",
@@ -94,8 +86,7 @@
     "site": "McAllen",
     "role": "CSR",
     "language": "Eng",
-    "group": "B",
-    "supervisor": "Jojo Valencia",
-    "qa": "Georgia Hardstark"
+    "group": "B"
+
   }
 ]

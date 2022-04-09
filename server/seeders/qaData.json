@@ -3,21 +3,24 @@
     "first_name": "Paul",
     "last_name": "Holes",
     "language": "Eng",
-    "site": "San Antonio",
-    "email": "migas123@mail.com"
+    "site": "San Antonio"
   },
+
+  
   {
     "first_name": "Karen",
     "last_name": "Kilgariff",
     "language": "Spn",
-    "site": "Tyler",
-    "email": "enchilada123@mail.com"
+    "site": "Tyler"
+ 
+  
   },
   {
     "first_name": "Georgia",
     "last_name": "Hardstark",
     "language": "Spn",
-    "site": "McAllen",
-    "email": "laflor2345@mail.com"
+    "site": "McAllen"
+
+   
   }
 ]

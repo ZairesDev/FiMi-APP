@@ -17,28 +17,42 @@ db.once("open", async () => {
   //creates each model in bulk
   const supervisors = await Supervisor.insertMany(supervisorData);
   const qasups = await QASup.insertMany(qaSupData);
-  const qa = await QA.insertMany(qaData);
+  const qas = await QA.insertMany(qaData);
   const employees = await Employee.insertMany(employeeData);
-  const tempEmp = employees[Math.floor(Math.random() * employees.length)];
+
 
 
   for (newEmp of employees) {
     // randomly adds a sup to each employee
     const tempSup = supervisors[Math.floor(Math.random() * supervisors.length)];
     newEmp.supervisor = tempSup._id;
-    await tempEmp.save();
+    await newEmp.save();
 
     //randomly adds a qa to an employee
-    const tempQA = qa[Math.floor(Math.random() * qa.length)];
+    const tempQA = qas[Math.floor(Math.random() * qas.length)];
     newEmp.qa = tempQA._id;
-    await tempEmp.save();
+    await newEmp.save();
+
+    // radomly adds a qasup to a qa
+    const tempQASup = qasups[Math.floor(Math.random() * qasups.length)];
+    tempQA.qasup = tempQASup._id;
+    await tempQA.save();
+
+    // //reference qa on qasup model
+    // tempQASup.qas.push(tempQA._id);
+    // await tempQASup.save();
+
+    // //reference emp on qa model
+    // tempQA.employees.push(newEmp._id);
+    // await tempQA.save();
+
+  
   }
 
 
-
-  //randomly add qasup to a qa
-  for (newqaSup of qasups) {
-  }
+  console.log("all done!");
+  process.exit(0);  
+  
 });
 
 

@@ -13,7 +13,7 @@ const typeDefs = gql`
     first_name: String
     last_name: String
     email: String
-  
+    qaStaff: [QA]
   }
 
   type Auth {
@@ -27,7 +27,9 @@ const typeDefs = gql`
     last_name: String
     language: String
     site: String
-    QASup: [QASup]
+    QASup: QASup
+    employees: [Employee]
+    
     
   }
 
@@ -40,8 +42,8 @@ const typeDefs = gql`
     role: String
     language: String
     group: String
-    supervisor: [Supervisor]
-    qa: [QA]
+    supervisor: Supervisor
+    qa: QA
   }
 
   # Queries
@@ -79,8 +81,6 @@ const typeDefs = gql`
     language: String!, site: String!, QASup: ID!): QA
   }
 `;
-
-
 
 
 // export the typeDefs

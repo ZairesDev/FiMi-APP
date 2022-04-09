@@ -23,7 +23,7 @@ const resolvers = {
 
     //get a qa sup by email
     QASup: async (parent, { email }) => {
-      return QASup.findOne({ email }).select("-__v -password");
+      return QASup.findOne({ email }).select("-__v -password").populate("qaStaff");
     },
 
     //get all CSR employees
@@ -38,7 +38,7 @@ const resolvers = {
 
     // get all QA staff
     QA: async () => {
-      return QA.find().populate("QASup");
+      return QA.find().populate("QASup").populate("employees")
     },
   },
 
