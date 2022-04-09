@@ -1,0 +1,101 @@
+[
+  {
+    "first_name": "Ricky",
+    "last_name": "Ricardo",
+    "employee_number": 1111,
+    "site": "San Antonio",
+    "role": "CSR",
+    "language": "Spn",
+    "group": "A",
+    "supervisor": 1,
+    "qa": "Paul Holes"
+  },
+  {
+    "first_name": "Chammy",
+    "last_name": "Stone",
+    "employee_number": 2222,
+    "site": "San Antonio",
+    "role": "CSR",
+    "language": "Eng",
+    "group": "A",
+    "supervisor": "Richard Cats",
+    "qa": "Paul Holes"
+  },
+  {
+    "first_name": "Perla",
+    "last_name": "Garcia",
+    "employee_number": 3333,
+    "site": "San Antonio",
+    "role": "CSR",
+    "language": "Eng",
+    "group": "A",
+    "supervisor": "Richard Cats",
+    "qa": "Paul Holes"
+  },
+  {
+    "first_name": "Carla",
+    "last_name": "Po",
+    "employee_number": 4444,
+    "site": "Tyler",
+    "role": "CSR",
+    "language": "Eng",
+    "group": "B",
+    "supervisor": "Selena Perez",
+    "qa": "Karen Kilgariff"
+  },
+  {
+    "first_name": "Steve",
+    "last_name": "Madrigal",
+    "employee_number": 5555,
+    "site": "Tyler",
+    "role": "CSR",
+    "language": "Spn",
+    "group": "B",
+    "supervisor": "Selena Perez",
+    "qa": "Karen Kilgariff"
+  },
+  {
+    "first_name": "Tim",
+    "last_name": "Santiago",
+    "employee_number": 6647,
+    "site": "Tyler",
+    "role": "CSR",
+    "language": "Spn",
+    "group": "B",
+    "supervisor": "Selena Perez",
+    "qa": "Karen Kilgariff"
+  },
+  {
+    "first_name": "Catalina",
+    "last_name": "Casper",
+    "employee_number": 7777,
+    "site": "McAllen",
+    "role": "CSR",
+    "language": "Eng",
+    "group": "B",
+    "supervisor": "Jojo Valencia",
+    "qa": "Georgia Hardstark"
+  },
+  {
+    "first_name": "Mike",
+    "last_name": "Zoom",
+    "employee_number": 8888,
+    "site": "McAllen",
+    "role": "CSR",
+    "language": "Eng",
+    "group": "B",
+    "supervisor": "Jojo Valencia",
+    "qa": "Georgia Hardstark"
+  },
+  {
+    "first_name": "Falcon",
+    "last_name": "Fernandez",
+    "employee_number": 9999,
+    "site": "McAllen",
+    "role": "CSR",
+    "language": "Eng",
+    "group": "B",
+    "supervisor": "Jojo Valencia",
+    "qa": "Georgia Hardstark"
+  }
+]
