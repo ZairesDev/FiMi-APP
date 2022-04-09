@@ -1,8 +1,11 @@
 import React from 'react'
+import SearchComp from '../components/SearchComp'
 
 const Search = () => {
   return (
-    <div>Search</div>
+    <div>
+      <SearchComp/>
+    </div>
   )
 }
 
