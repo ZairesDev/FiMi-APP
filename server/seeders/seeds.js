@@ -25,8 +25,7 @@ db.once("open", async () => {
 
   for (newEmp of employees) {
     // radomly adds a qasup to a qa
-
-    tempQA.qasup = tempQASup._id;
+    tempQA.QASup = tempQASup._id;
     await tempQA.save();
 
     //randomly adds a qa to an employee
@@ -39,16 +38,16 @@ db.once("open", async () => {
     newEmp.supervisor = tempSup._id;
     await newEmp.save();
 
-    // //reference qa on qasup model
-    // tempQASup.qas.push(tempQA._id);
-    // await tempQASup.save();
+    //reference qa on qasup model
+    tempQASup.qaStaff.push(tempQA._id);
+    await tempQASup.save();
 
-    // //reference emp on qa model
-    // tempQA.employees.push(newEmp._id);
-    // await tempQA.save();
+    //reference emp on qa model
+    tempQA.employees.push(newEmp._id);
+    await tempQA.save();
   }
   
-
+  
 
   console.log("seeds done!");
   process.exit(0);  
