@@ -4,11 +4,11 @@ import './LoginComp.css'
 
 const LoginComp = () => {
     return (
-        <>
-            <Paper elevation={24} sx={{
-                    display: 'flex', flexWarp: 'wrap', justifyContent: 'center', mt: '30vh', width: '20vw'
+        <div className='paper-pos'>
+            <Paper  elevation={24} sx={{
+                    display: 'flex', flexWarp: 'wrap', justifyContent: 'center', mt: '30vh', width: '40vw', 
                 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'center', flexWarp: 'wrap', flexDirection: 'column', p: '50px', width: '15vw' }}> 
+                <Box sx={{ display: 'flex', justifyContent: 'center', flexWarp: 'wrap', flexDirection: 'column', p: '50px', width: '25vw' }}> 
                     <Typography className='form-spacing form-header'>
                         Login
                     </Typography>
@@ -17,7 +17,7 @@ const LoginComp = () => {
                     <Button className='submit form-spacing' variant="contained">Submit</Button>
                 </Box>
             </Paper>
-        </>
+        </div>
     )
 
 }

@@ -10,3 +10,8 @@
 .submit {
     padding: 5px !important;
 }
+
+.paper-pos {
+    position: relative;
+    left: 30vw;
+}
