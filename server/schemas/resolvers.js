@@ -1,14 +1,16 @@
-const { Supervisor, Employee, QASup, QA } = require('../models')
+const { AuthenticationError } = require("apollo-server-express");
+const { Supervisor, Employee, QASup, QA } = require("../models");
 const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
-
     //login query//for login screen
     me: async (parent, args, context) => {
       if (context.QASup) {
         const QASupData = await QASup.findOne({
           _id: context.QASup._id,
-        }).select("-__v -password");
+        })
+          .select("-__v -password")
+          .populate("qaStaff");
 
         return QASupData;
       }
@@ -23,7 +25,9 @@ const resolvers = {
 
     //get a qa sup by email
     QASup: async (parent, { email }) => {
-      return QASup.findOne({ email }).select("-__v -password").populate("qaStaff");
+      return QASup.findOne({ email })
+        .select("-__v -password")
+        .populate("qaStaff");
     },
 
     //get all CSR employees
@@ -38,7 +42,7 @@ const resolvers = {
 
     // get all QA staff
     QA: async () => {
-      return QA.find().populate("QASup").populate("employees")
+      return QA.find().populate("QASup").populate("employees");
     },
   },
 
@@ -91,7 +95,7 @@ const resolvers = {
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("Incorrect password");
       }
 
       const token = signToken(user);
@@ -101,5 +105,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-
-
