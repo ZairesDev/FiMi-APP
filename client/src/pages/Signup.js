@@ -137,7 +137,6 @@ const Signup = () => {
             {error && <Box>Sign up failed</Box>}
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
