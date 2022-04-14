@@ -1,0 +1,20 @@
+[
+  {
+    "first_name": "Cris",
+    "last_name": "Padilla",
+    "email": "crispadilla@mail.com",
+    "password": "papascatsup"
+  },
+  {
+    "first_name": "Paquita",
+    "last_name": "Ladel",
+    "email": "paquita123@mail.com",
+    "password": "waffles1234"
+  },
+    {
+      "first_name": "Matcha",
+      "last_name": "Frida",
+      "email": "matchafrida@mail.com",
+      "password": "bobaislife123"
+    }
+]

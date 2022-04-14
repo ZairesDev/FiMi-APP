@@ -6,12 +6,6 @@ const secret = 'mycatisbetterthanyourdogsshhhhh';
 const expiration = '1h';
 
 module.exports = {
-  // expects a user object and will add the users username, email, and _id properties to the token.
-  signToken: function ({ username, email, _id }) {
-    const payload = { username, email, _id };
-
-    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-  },
   authMiddleware: function ({ req }) {
     // token can now be sent by either: req.body, req.query, or headers
     let token = req.body.token || req.query.token || req.headers.authorization;
@@ -31,5 +25,12 @@ module.exports = {
 
     // returns the new and updated req {}
     return req;
+  },
+
+  // expects a user object and will add the users email, _id properties to the token.
+  signToken: function ({ email, _id }) {
+    const payload = { email, _id };
+
+    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };
