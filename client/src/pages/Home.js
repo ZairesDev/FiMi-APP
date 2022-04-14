@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { EMPLOYEES, QUERY_ME } from '../../utils/queries';
+import { EMPLOYEES, QUERY_ME } from '../utils/queries';
 import Button from '@mui/material/Button';
 import { DataGrid } from '@mui/x-data-grid';
 
