@@ -35,6 +35,7 @@ const MainDataTable = () => {
     }
   };
 
+  //* No mutation for this action, so will just delete the row.
   const removeRow = () => setNbRows((x) => Math.max(0, x - 1));
 
   // const { data } =
