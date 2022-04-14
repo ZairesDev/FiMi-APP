@@ -52,7 +52,7 @@ const MainDataTable = () => {
       <Button variant='outlined' onClick={handleOnClick}>
         Add Employee
       </Button>
-      <DataGrid autoHeight {...data} rows={data.rows.slice(0, rows)} />
+      <DataGrid autoHeight {...data} rows={data.rows.slice(0, rows)} columns={columns} />
     </div>
   );
 };
