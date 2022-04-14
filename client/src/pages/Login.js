@@ -109,6 +109,7 @@ const Login = (props) => {
                 </Link>
               </Grid>
             </Grid>
+            {error && <div>Login failed</div>}
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
