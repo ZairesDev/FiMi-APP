@@ -1,30 +1,4 @@
-<<<<<<< HEAD
 const { gql } = require('apollo-server-express');
-
-//* variable name, for QASup, may change depending on model information
-
-const typeDefs = gql`
-  type Auth {
-    token: ID!
-    qaSupervisor: QaSupervisor
-  }
-
-  type Query {
-    // this should just go above your QASup query type dif. 
-    // will NOT be it's own query. 
-    me: QASup
-  }
-
-  type Mutation {
-    login(email: String!, password: String!): Auth
-    addSupervisor(username: String!, email: String!, password: String!): Auth
-  }
-`;
-
-module.exports = typeDefs;
-=======
-const { gql } = require("apollo-server-express");
-
 
 const typeDefs = gql`
   type Supervisor {
@@ -54,8 +28,6 @@ const typeDefs = gql`
     site: String
     QASup: QASup
     employees: [Employee]
-    
-    
   }
 
   type Employee {
@@ -102,12 +74,9 @@ const typeDefs = gql`
 
     addQASupUser(first_name: String!, last_name: String!, email: String!, password: String!): Auth
 
-    addQA(first_name: String!, last_name: String!, 
-    language: String!, site: String!, QASup: ID!): QA
+    addQA(first_name: String!, last_name: String!, language: String!, site: String!, QASup: ID!): QA
   }
 `;
 
-
 // export the typeDefs
 module.exports = typeDefs;
->>>>>>> develop

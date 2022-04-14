@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
 import Sidebar from '../src/components/Sidebar';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -7,11 +8,11 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import Search from './pages/Search';
 
-const httpLink = createNewHttp({
+const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-const authLink = setConteect((_, { headers }) => {
+const authLink = setContext((_, { headers }) => {
   const tokenId = localStorage.getItem('id_token');
   return {
     headers: {
