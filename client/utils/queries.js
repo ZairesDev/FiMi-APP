@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const QUERY_ME = gql`
   {
@@ -34,29 +34,25 @@ export const QUERY_QAROSTER = gql`
   }
 `;
 
-
 export const EMPLOYEES = gql`
- 
- {
- employees {
-    _id
-    first_name
-    last_name
-    employee_number
-    site
-    role
-    language
-    group
-    supervisor {
+  {
+    employees {
+      _id
       first_name
       last_name
-    }
-    qa {
-      first_name
-      last_name
-        }
+      employee_number
+      site
+      role
+      language
+      group
+      supervisor {
+        first_name
+        last_name
+      }
+      qa {
+        first_name
+        last_name
+      }
     }
   }
-
-
 `;
