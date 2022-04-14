@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_QA } from '../utils/mutations';
+import { ADD_QASUP_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
-  const [addQA, { error }] = useMutation(ADD_QA);
+  const [addQA, { error }] = useMutation(ADD_QASUP_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -38,15 +38,6 @@ const Signup = () => {
           <h3 className=''>Sign Up</h3>
           <div className=''>
             <form onSubmit={handleFormSubmit}>
-              <input
-                className='form-input'
-                placeholder='Your username'
-                name='username'
-                type='username'
-                id='username'
-                value={formState.username}
-                onChange={handleChange}
-              />
               <input
                 className='form-input'
                 placeholder='Your email'
