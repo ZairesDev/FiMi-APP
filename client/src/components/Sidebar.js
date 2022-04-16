@@ -13,7 +13,7 @@ import {
   Menu,
   MenuItem,
 } from '@mui/material';
-import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 
 // const logout = (event) => {
 //   event.preventDefault();
