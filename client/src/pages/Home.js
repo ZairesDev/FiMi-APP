@@ -6,19 +6,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import Auth from '../utils/auth';
 import { ADD_EMPLOYEE } from '../utils/mutations';
 import { EMPLOYEES, QUERY_ME } from '../utils/queries';
-
-const columns = [
-  { field: 'id', headerName: 'QA-Supervisor ID', width: 150 },
-  { field: 'first name', headerName: 'First Name', width: 130 },
-  { field: 'last name', headerName: 'Last Name', width: 130 },
-  { field: 'employee number', headerName: 'Employee Number', width: 150 },
-  { field: 'site', headerName: 'Site', width: 150 },
-  { field: 'role', headerName: 'Role', width: 150 },
-  { field: 'language', headerName: 'Language', width: 150 },
-  { field: 'group', headerName: 'Group', width: 150 },
-  { field: 'supervisor', headerName: 'Supervisor', width: 250 },
-  { field: 'qa', headerName: 'QA Agent', width: 150 },
-];
+import DataTable from '../components/Employee-Table';
 
 const Home = () => {
   // const [employeeCount, setEmployeeCount] = useState(0);
@@ -52,7 +40,9 @@ const Home = () => {
     <div style={{ width: '100%' }}>
       <Button variant='outlined'>Remove Employee</Button>
       <Button variant='outlined'>Add Employee</Button>
-      {/* <DataGrid autoHeight {...data} rows={data.rows.slice(0, rows)} columns={columns} /> */}
+      <DataGrid>
+        <DataTable />
+      </DataGrid>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { EMPLOYEES } from '../../utils/queries';
 import { ADD_EMPLOYEE } from '../../utils/mutations';
 
 const DataTable = () => {
-  // const [employee, setEmployee] = useState(0);
+  // const [employee, setEmployee] = useState([]);
   // const { loading, data } = useQuery(EMPLOYEES;)
   // const [addEmployee, { error }] = useMutation(ADD_EMPLOYEE);
 
