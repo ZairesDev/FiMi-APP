@@ -7,8 +7,17 @@ import { ADD_EMPLOYEE } from '../../utils/mutations';
 
 const DataTable = () => {
   // const [employee, setEmployee] = useState([]);
-  // const { loading, data } = useQuery(EMPLOYEES;)
   // const [addEmployee, { error }] = useMutation(ADD_EMPLOYEE);
+  const { data: employeeId } = useParams();
+
+  const { loading, data } = useQuery(EMPLOYEES, {
+    variables: { data: employeeId },
+  });
+
+  const employee = data?.employee || [];
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   const columns = [
     { field: 'id', headerName: 'QA-Supervisor ID', width: 70 },

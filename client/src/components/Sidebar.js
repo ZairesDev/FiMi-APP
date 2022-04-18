@@ -4,15 +4,7 @@ import './Sidebar.css';
 import { SidebarObjects } from './SidebarObjects';
 import { mdiMenu, mdiClose } from '@mdi/js';
 import { Link } from 'react-router-dom';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-  useTheme,
-  Menu,
-  MenuItem,
-} from '@mui/material';
+import { AppBar, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import Auth from '../utils/auth';
 
 const logout = (event) => {
