@@ -29,6 +29,8 @@ Sign Up: Create a profile with an email and password.
 
 ## Link to Heroku Deployed Application
 
+- https://lit-retreat-92639.herokuapp.com/
+
 ### Technologies Used
 
 - JavaScript
