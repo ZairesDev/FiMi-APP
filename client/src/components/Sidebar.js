@@ -15,10 +15,10 @@ import {
 } from '@mui/material';
 import Auth from '../utils/auth';
 
-// const logout = (event) => {
-//   event.preventDefault();
-//   Auth.logout()
-// }
+const logout = (event) => {
+  event.preventDefault();
+  Auth.logout();
+};
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -92,17 +92,17 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <Typography>Login</Typography>
-                  {/* <Link to='/login'></Link> */}
+                  <Link to='/login'></Link>
                 </li>
                 <li>
                   <Typography>Sign up</Typography>
-                  {/* <Link to='/signup'></Link> */}
+                  <Link to='/signup'></Link>
                 </li>
                 <li>
                   <Typography>Logout</Typography>
-                  {/* <a href='/' onClick={logout}>
+                  <a href='/' onClick={logout}>
                     Logout
-                  </a> */}
+                  </a>
                 </li>
                 <Menu id='menu' anchorEl={anchorEl} open={openDropdown} onClose={manageClose}>
                   <MenuItem onClick={manageClose}>

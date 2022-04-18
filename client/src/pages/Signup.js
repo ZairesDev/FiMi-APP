@@ -17,14 +17,14 @@ import { ADD_QASUP_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
-  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+  const [signUpState, setSignUpState] = useState({ username: '', email: '', password: '' });
   const [addQA, { error }] = useMutation(ADD_QASUP_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
+    setSignUpState({
+      ...signUpState,
       [name]: value,
     });
   };
@@ -35,7 +35,7 @@ const Signup = () => {
 
     try {
       const { data } = await addQA({
-        variables: { ...formState },
+        variables: { ...signUpState },
       });
 
       Auth.login(data.addQA.token);
@@ -53,7 +53,7 @@ const Signup = () => {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 20,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -75,7 +75,7 @@ const Signup = () => {
                   fullWidth
                   id='firstName'
                   label='First Name'
-                  value={formState.firstName}
+                  value={signUpState.firstName}
                   onChange={handleChange}
                   autoFocus
                 />
@@ -88,7 +88,7 @@ const Signup = () => {
                   label='Last Name'
                   name='lastName'
                   autoComplete='family-name'
-                  value={formState.lastName}
+                  value={signUpState.lastName}
                   onChange={handleChange}
                 />
               </Grid>
@@ -100,7 +100,7 @@ const Signup = () => {
                   label='Email Address'
                   name='email'
                   autoComplete='email'
-                  value={formState.email}
+                  value={signUpState.email}
                   onChange={handleChange}
                 />
               </Grid>
@@ -113,14 +113,8 @@ const Signup = () => {
                   type='password'
                   id='password'
                   autoComplete='new-password'
-                  value={formState.password}
+                  value={signUpState.password}
                   onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value='allowExtraEmails' color='primary' />}
-                  label='I want to receive inspiration, marketing promotions and updates via email.'
                 />
               </Grid>
             </Grid>
@@ -129,7 +123,7 @@ const Signup = () => {
             </Button>
             <Grid container justifyContent='flex-end'>
               <Grid item>
-                <Link href='#' variant='body2'>
+                <Link to='/login' variant='body2'>
                   Already have an account? Sign in
                 </Link>
               </Grid>
