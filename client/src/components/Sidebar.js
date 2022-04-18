@@ -67,60 +67,47 @@ const Sidebar = () => {
                   })}
                 </ul>
               </div>
-              <Typography className='logo'>
+              <Link className='logo text-decor' to='/'>
                 <h1>Fimi</h1>
-              </Typography>
+              </Link>
+
+              {/* <Typography className='logo'>
+                <h1>Fimi</h1>
+              </Typography> */}
             </Toolbar>
           </>
         ) : (
           <>
             <Toolbar className='header'>
-              <h1>Fimi</h1>
+              <Link className='text-decor' to='/'>
+                <h1>Fimi</h1>
+              </Link>
               <ul className='nav-header'>
                 <li>
-                  <Typography>Home</Typography>
+                  <Link className='text-decor' to='/'>
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Typography
-                    aria-controls='menu'
-                    aria-haspopup='true'
-                    aria-expanded={openDropdown ? 'true' : undefined}
-                    onClick={manageClick}
-                  >
-                    Management
-                  </Typography>
+                  <Link className='text-decor' to='/search'>
+                    Search
+                  </Link>
                 </li>
                 <li>
-                  <Typography>Login</Typography>
-                  <Link to='/login'></Link>
+                  <Link className='text-decor' to='/login'>
+                    Login
+                  </Link>
                 </li>
                 <li>
-                  <Typography>Sign up</Typography>
-                  <Link to='/signup'></Link>
+                  <Link className='text-decor' to='/signup'>
+                    Signup
+                  </Link>
                 </li>
                 <li>
-                  <Typography>Logout</Typography>
-                  <a href='/' onClick={logout}>
+                  <a className='text-decor' href='/' onClick={logout}>
                     Logout
                   </a>
                 </li>
-                <Menu id='menu' anchorEl={anchorEl} open={openDropdown} onClose={manageClose}>
-                  <MenuItem onClick={manageClose}>
-                    <Link className='no-text-decor' to='/empform' path='/empform'>
-                      Add Employee
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={manageClose}>
-                    <Link className='no-text-decor' to='/dashboard' path='/dashboard'>
-                      Dashboard
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={manageClose}>
-                    <Link className='no-text-decor' to='/search' path='/search'>
-                      Search
-                    </Link>
-                  </MenuItem>
-                </Menu>
               </ul>
             </Toolbar>
           </>

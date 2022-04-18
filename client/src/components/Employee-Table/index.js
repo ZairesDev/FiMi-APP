@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { EMPLOYEES } from '../../utils/queries';
 import { ADD_EMPLOYEE } from '../../utils/mutations';
 
