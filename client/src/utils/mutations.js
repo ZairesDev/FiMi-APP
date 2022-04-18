@@ -25,27 +25,45 @@ export const ADD_QASUP_USER = gql`
 `;
 
 export const ADD_EMPLOYEE = gql`
-    mutation addEmployee($firstName: String!, $lastName: String!, $employeeNumber: Int!, $site: String!, $role: String!, $language: String!, $group: String!, $supervisor: ID!, $qa: ID!) {
-    addEmployee((first_name: $firstName, last_name: $lastName, employee_number: $employeeNumber, site: $site, role: $role, language: $language, group: $group, supervisor: $supervisor, qa: $qa){
+  mutation addEmployee(
+    $firstName: String!
+    $lastName: String!
+    $employeeNumber: Int!
+    $site: String!
+    $role: String!
+    $language: String!
+    $group: String!
+    $supervisor: ID!
+    $qa: ID!
+  ) {
+    addEmployee(
+      first_name: $firstName
+      last_name: $lastName
+      employee_number: $employeeNumber
+      site: $site
+      role: $role
+      language: $language
+      group: $group
+      supervisor: $supervisor
+      qa: $qa
+    ) {
+      first_name
+      last_name
+      employee_number
+      site
+      role
+      language
+      group
+      supervisor {
         first_name
         last_name
-        employee_number
-        site
-        role
-        language
-        group
-            supervisor {
-                first_name
-                last_name
-                
-            }
-            qa {
-                first_name
-                last_name
-            }
+      }
+      qa {
+        first_name
+        last_name
+      }
     }
-    
-    }
+  }
 `;
 
 export const ADD_QA = gql`

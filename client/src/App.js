@@ -35,10 +35,9 @@ const App = () => {
         <Router>
           <Sidebar />
           <Routes>
-            <Route path='/' exact component={Home} />
+            <Route path='/' component={dashboard} />
             <Route path='/Login' component={Login} />
             <Route path='/Search' component={Search} />
-            <Route path='/Dashboard' component={Dashboard} />
             <Route path='/Signup' component={Signup} />
           </Routes>
         </Router>
