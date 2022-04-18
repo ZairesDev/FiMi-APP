@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+
+// MUI imports
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -17,14 +17,14 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [loginState, setLoginState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
+    setLoginState({
+      ...loginState,
       [name]: value,
     });
   };
@@ -34,14 +34,14 @@ const Login = (props) => {
 
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: { ...loginState },
       });
       Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
     }
 
-    setFormState({
+    setLoginState({
       email: '',
       password: '',
     });
@@ -55,7 +55,7 @@ const Login = (props) => {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 20,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -97,18 +97,6 @@ const Login = (props) => {
             <Button type='submit' fullWidth variant='contained' sx={{ mt: 3, mb: 2 }}>
               Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href='#' variant='body2'>
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href='#' variant='body2'>
-                  {"Don't have an account? Speak with HR."}
-                </Link>
-              </Grid>
-            </Grid>
             {error && <div>Login failed</div>}
           </Box>
         </Box>

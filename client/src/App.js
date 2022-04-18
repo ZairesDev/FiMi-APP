@@ -3,10 +3,9 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import Sidebar from '../src/components/Sidebar';
-import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Dashboard from './pages/Dashboard';
+import Home from './pages/Home';
 import Search from './pages/Search';
 
 const httpLink = createHttpLink({
@@ -35,11 +34,10 @@ const App = () => {
         <Router>
           <Sidebar />
           <Routes>
-            <Route path='/' exact component={Home} />
-            <Route path='/Login' component={Login} />
-            <Route path='/Search' component={Search} />
-            <Route path='/Dashboard' component={Dashboard} />
-            <Route path='/Signup' component={Signup} />
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/search' element={<Search />} />
+            <Route exact path='/signup' element={<Signup />} />
           </Routes>
         </Router>
       </ApolloProvider>
