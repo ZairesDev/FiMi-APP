@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useQuery } from '@apollo/client';
+import React from 'react';
+//* bring in useState when ready
+// import { useQuery } from '@apollo/client';
+// import { EMPLOYEE } from '../utils/queries';
 import Button from '@mui/material/Button';
-import { DataGrid } from '@mui/x-data-grid';
+// import { DataGrid } from '@mui/x-data-grid';
 
-import Auth from '../utils/auth';
-import { ADD_EMPLOYEE } from '../utils/mutations';
-import { EMPLOYEES, QUERY_ME } from '../utils/queries';
-import DataTable from '../components/Employee-Table';
+// import Auth from '../utils/auth';
+// import { ADD_EMPLOYEE } from '../utils/mutations';
+// import { EMPLOYEES, QUERY_ME } from '../utils/queries';
+// import DataTable from '../components/Employee-Table';
 
 const Home = () => {
   // const [employeeCount, setEmployeeCount] = useState(0);
-
   // const { loading, employeeData } = useQuery(EMPLOYEES);
-  // const { data: QaData } = useQuery(QUERY_ME);
-  // const [addEmployee, { error }] = useMutation(ADD_EMPLOYEE);
+  // const { loading, data } = useQuery(EMPLOYEE, {
+  //   variables: { data: employeeId },
+  // });
+
+  // const employee = data?.employee || [];
 
   // // // const [rows, setRows] = useState(5);
 
@@ -40,9 +44,9 @@ const Home = () => {
     <div style={{ width: '100%' }}>
       <Button variant='outlined'>Remove Employee</Button>
       <Button variant='outlined'>Add Employee</Button>
-      <DataGrid>
+      {/* <DataGrid>
         <DataTable />
-      </DataGrid>
+      </DataGrid> */}
     </div>
   );
 };
