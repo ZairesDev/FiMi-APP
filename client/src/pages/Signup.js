@@ -15,7 +15,12 @@ import { ADD_QASUP_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
-  const [signUpState, setSignUpState] = useState({ username: '', email: '', password: '' });
+  const [signUpState, setSignUpState] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
   const [addQA, { error }] = useMutation(ADD_QASUP_USER);
 
   const handleChange = (event) => {

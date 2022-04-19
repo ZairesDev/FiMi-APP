@@ -3,6 +3,8 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import Sidebar from '../src/components/Sidebar';
+// import EmployeeTable from './components/Employee-Table'
+
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
