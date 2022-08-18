@@ -7,7 +7,7 @@ import { setContext } from '@apollo/client/link/context';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Home from './pages/Home';
-import EmployeeSearch from './pages/EmployeeSearch';
+import Search from './pages/Search';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -31,7 +31,18 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <div>
-      <ApolloProvider client={client}></ApolloProvider>
+      <ApolloProvider client={client}>
+        <Router>
+          <Routes>
+            <Route exact path='/signup' element={<SignUp />} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/search' element={<Search />} />
+          </Routes>
+        </Router>
+      </ApolloProvider>
     </div>
   );
 };
+
+export default App;
