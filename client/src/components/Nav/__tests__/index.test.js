@@ -11,4 +11,10 @@ describe('Nav Component', () => {
   it('renders', () => {
     render(<Nav />);
   });
+
+  it('matches snapshot DOM node structure', () => {
+    // render Nav
+    const { asFragment } = render(<Nav />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
