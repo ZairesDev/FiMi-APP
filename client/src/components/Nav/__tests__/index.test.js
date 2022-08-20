@@ -7,13 +7,13 @@ import Nav from '..';
 afterEach(cleanup);
 
 describe('Nav Component', () => {
-  // renders Nav test
+  // baseline Nav test
   it('renders', () => {
     render(<Nav />);
   });
 
   it('matches snapshot DOM node structure', () => {
-    // render Nav
+    // render Nav snapshot
     const { asFragment } = render(<Nav />);
     expect(asFragment()).toMatchSnapshot();
   });
