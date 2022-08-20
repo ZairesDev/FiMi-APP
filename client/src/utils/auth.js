@@ -6,9 +6,9 @@ class AuthService {
   }
 
   isLoggedIn() {
-    /// this token variable will be based on checking to see if the retrieved token from localStorage is still valid.
+    // this token variable will be based on checking to see if the retrieved token from localStorage is still valid.
     const token = this.retrieveToken();
-    // use type coercion to check if token is NOT undefined and the token is NOT expired
+    // use type coercion to check if token is NOT undefined and the token is NOT expired.
     return !!token && !this.isTokenExpired(token);
   }
 
@@ -16,14 +16,23 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
+  // another way to write the same method
+  // isTokenExpired(token) {
+  //   try {
+  //     const decoded = decode(token);
+  //     if (decoded.exp < Date.now() / 1000) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   } catch (err) {
+  //     return false;
+  //   }
+
   isTokenExpired(token) {
     try {
       const decoded = decode(token);
-      if (decoded.exp < Date.now() / 1000) {
-        return true;
-      } else {
-        return false;
-      }
+      return decoded.exp < Date.now() / 1000;
     } catch (err) {
       return false;
     }
@@ -31,7 +40,6 @@ class AuthService {
 
   loginQa(idToken) {
     localStorage.setItem('id_token', idToken);
-
     window.location.assign('/');
   }
 

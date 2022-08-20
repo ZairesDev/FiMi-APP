@@ -2,13 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Sidebar from '../src/components/Sidebar';
-// import EmployeeTable from './components/Employee-Table'
-
+//import the different pages
+//TODO: create tests for every page
+import SignUp from './pages/SignUp';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
 import Home from './pages/Home';
 import Search from './pages/Search';
+import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -34,12 +34,12 @@ const App = () => {
     <div>
       <ApolloProvider client={client}>
         <Router>
-          <Sidebar />
           <Routes>
-            <Route exact path='/' element={<Home />} />
+            <Route exact path='/signup' element={<SignUp />} />
             <Route exact path='/login' element={<Login />} />
+            <Route exact path='/' element={<Home />} />
             <Route exact path='/search' element={<Search />} />
-            <Route exact path='/signup' element={<Signup />} />
+            <Route element={NoMatch} />
           </Routes>
         </Router>
       </ApolloProvider>

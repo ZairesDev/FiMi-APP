@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Component matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <div>
+    Table
+  </div>
+</DocumentFragment>
+`;

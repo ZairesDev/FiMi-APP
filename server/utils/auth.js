@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 // this will enable the server to verify whether it recognizes a given  token
+//TODO: place secret into .env file
 const secret = 'mycatisbetterthanyourdogsshhhhh';
 // the token will expire within 1 hour. Given that this app is ideally made for a companies Quality Assurance Dept., I figured less time would be ideal for security reasons.
 const expiration = '1h';
